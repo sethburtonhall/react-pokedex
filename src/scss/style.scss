@@ -1,0 +1,76 @@
+@import "node_modules/include-media/dist/_include-media.scss";
+
+$breakpoints: (
+  phone: 320px,
+  tablet: 768px,
+  laptop: 992px,
+  desktop: 1024px
+);
+
+$blue: #4A6487;
+$pink: #AB305F;
+$green: #436F4C;
+$red: #DB2901;
+$gray: #D3D3D3;
+
+.app {
+
+  .app-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.pokedex {
+  text-align: center;
+
+  .pokedex-winner {
+    color: $green;
+  }
+
+  .pokedex-loser {
+    color: $red;
+  }
+
+  .pokedex-cards {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include media(">=desktop") {
+      width: 80%;
+      margin: auto;
+    }
+
+    .pokecard-wrapper {
+      width: 50%;
+      margin-bottom: 50px;
+
+      @include media(">=tablet") {
+        width: 25%;
+      }
+    }
+
+    .pokecard {
+      background-color: $gray;
+      border: 3px solid $blue;
+      margin: 0 10px;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+
+      .pokemon-name {
+        margin: 0;
+        color: $pink;
+      }
+
+      .pokemon-image {
+        width: 50%;
+      }
+
+    }
+  }
+}
